@@ -1,0 +1,212 @@
+[
+  {
+    "id": "FAC-JAM-001",
+    "name": "Reliance Jamnagar Refinery Complex",
+    "facility_type": "refinery",
+    "latitude": 22.355,
+    "longitude": 69.875,
+    "country": "India",
+    "region": "Gujarat",
+    "criticality": 0.95,
+    "source": "OpenStreetMap",
+    "source_confidence": 1.0,
+    "geometry_geojson": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            69.865,
+            22.345
+          ],
+          [
+            69.885,
+            22.345
+          ],
+          [
+            69.885,
+            22.365
+          ],
+          [
+            69.865,
+            22.365
+          ],
+          [
+            69.865,
+            22.345
+          ]
+        ]
+      ]
+    },
+    "extra_metadata": {
+      "operator": "Reliance"
+    }
+  },
+  {
+    "id": "FAC-KOY-002",
+    "name": "IOCL Gujarat Refinery (Koyali)",
+    "facility_type": "refinery",
+    "latitude": 22.378,
+    "longitude": 73.125,
+    "country": "India",
+    "region": "Gujarat",
+    "criticality": 0.9,
+    "source": "OpenStreetMap",
+    "source_confidence": 0.98,
+    "geometry_geojson": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.115,
+            22.368
+          ],
+          [
+            73.135,
+            22.368
+          ],
+          [
+            73.135,
+            22.388
+          ],
+          [
+            73.115,
+            22.388
+          ],
+          [
+            73.115,
+            22.368
+          ]
+        ]
+      ]
+    },
+    "extra_metadata": {
+      "operator": "IOCL"
+    }
+  },
+  {
+    "id": "FAC-MUN-003",
+    "name": "Mundra Super Thermal Power Plant",
+    "facility_type": "thermal_power",
+    "latitude": 22.825,
+    "longitude": 69.525,
+    "country": "India",
+    "region": "Gujarat",
+    "criticality": 0.85,
+    "source": "WRI GPPD",
+    "source_confidence": 0.95,
+    "geometry_geojson": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            69.515,
+            22.815
+          ],
+          [
+            69.535,
+            22.815
+          ],
+          [
+            69.535,
+            22.835
+          ],
+          [
+            69.515,
+            22.835
+          ],
+          [
+            69.515,
+            22.815
+          ]
+        ]
+      ]
+    },
+    "extra_metadata": {
+      "operator": "Mundra"
+    }
+  },
+  {
+    "id": "FAC-JAM-004",
+    "name": "Tata Steel Plant (Jamshedpur)",
+    "facility_type": "steel",
+    "latitude": 22.802,
+    "longitude": 86.195,
+    "country": "India",
+    "region": "Jharkhand",
+    "criticality": 0.88,
+    "source": "OpenStreetMap",
+    "source_confidence": 0.96,
+    "geometry_geojson": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            86.185,
+            22.792
+          ],
+          [
+            86.205,
+            22.792
+          ],
+          [
+            86.205,
+            22.812
+          ],
+          [
+            86.185,
+            22.812
+          ],
+          [
+            86.185,
+            22.792
+          ]
+        ]
+      ]
+    },
+    "extra_metadata": {
+      "operator": "Tata"
+    }
+  },
+  {
+    "id": "FAC-PAR-005",
+    "name": "IOCL Paradip Refinery",
+    "facility_type": "refinery",
+    "latitude": 20.275,
+    "longitude": 86.635,
+    "country": "India",
+    "region": "Odisha",
+    "criticality": 0.92,
+    "source": "OpenStreetMap",
+    "source_confidence": 0.95,
+    "geometry_geojson": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            86.62,
+            20.26
+          ],
+          [
+            86.65,
+            20.26
+          ],
+          [
+            86.65,
+            20.29
+          ],
+          [
+            86.62,
+            20.29
+          ],
+          [
+            86.62,
+            20.26
+          ]
+        ]
+      ]
+    },
+    "extra_metadata": {
+      "operator": "IOCL"
+    }
+  }
+]

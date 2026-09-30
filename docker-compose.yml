@@ -1,0 +1,49 @@
+services:
+  postgis:
+    image: postgis/postgis:16-3.4
+    container_name: sih26162-postgis
+    environment:
+      POSTGRES_DB: thermal_intelligence
+      POSTGRES_USER: sih_user
+      POSTGRES_PASSWORD: sih_secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgis_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sih_user -d thermal_intelligence"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: sih26162-backend
+    environment:
+      - ENVIRONMENT=production
+      - DEMO_MODE=true
+      - DATABASE_URL=postgresql://sih_user:sih_secret@postgis:5432/thermal_intelligence
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgis:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: sih26162-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgis_data:
