@@ -303,21 +303,21 @@ export const MapComponent: React.FC<MapComponentProps> = ({
           style={{ height: "28px", fontSize: "0.75rem", padding: "0 10px" }}
           onClick={() => handleBasemapChange("satellite")}
         >
-          🛰️ Satellite
+          Satellite
         </button>
         <button
           className={`btn ${currentBasemap === "dark" ? "btn-primary" : "btn-outline"}`}
           style={{ height: "28px", fontSize: "0.75rem", padding: "0 10px" }}
           onClick={() => handleBasemapChange("dark")}
         >
-          🌑 Dark Canvas
+          Dark Canvas
         </button>
         <button
           className={`btn ${currentBasemap === "osm" ? "btn-primary" : "btn-outline"}`}
           style={{ height: "28px", fontSize: "0.75rem", padding: "0 10px" }}
           onClick={() => handleBasemapChange("osm")}
         >
-          🗺️ Street (OSM)
+          Street (OSM)
         </button>
       </div>
 
@@ -340,7 +340,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
             boxShadow: "0 4px 12px rgba(0,0,0,0.5)",
           }}
         >
-          <span>⚠️ Satellite imagery blocked by network.</span>
+          <span>Satellite imagery blocked by network.</span>
           <button
             className="btn btn-outline"
             style={{ height: "22px", fontSize: "11px", padding: "0 6px", backgroundColor: "#fff", color: "#000" }}
