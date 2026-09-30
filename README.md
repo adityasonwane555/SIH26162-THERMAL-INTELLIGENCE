@@ -31,7 +31,31 @@ RAW SATELLITE HOTSPOT                  FACILITY-AWARE INTELLIGENCE
 
 ---
 
-## 2. Core Scientific Innovations
+## 2. Interactive Intelligence Console & Visual Analytics
+
+### 2.1 Geospatial Thermal Surveillance & Triage Dashboard
+*Interactive high-resolution satellite basemap with real-time VIIRS 375m active fire detections, verified facility operational boundaries, and priority incident triage queue.*
+
+![Geospatial Thermal Surveillance Dashboard](docs/screenshots/01_map_dashboard.png)
+
+### 2.2 Forensic "What Changed?" Anomaly Decomposition
+*Five-dimensional physical deviation decomposition ($\Delta_{intensity}$, $\Delta_{spatial}$, $\Delta_{area}$, $\Delta_{timing}$, $\Delta_{persistence}$) comparing incident thermal vectors against the facility's pre-compiled historical baseline with calibrated probability and counterfactual evidence.*
+
+![Forensic Anomaly Decomposition](docs/screenshots/02_forensic_investigation.png)
+
+### 2.3 Facility "Thermal DNA" & Historical Operating Envelopes
+*Statistical baseline envelopes compiled from multi-year polar-orbiting radiometry: robust non-parametric quantiles ($Q_{10}\text{--}Q_{90}$), Median Absolute Deviation (MAD), diurnal harmonic regime, and DBSCAN flare cluster mapping.*
+
+![Facility Thermal DNA Profile](docs/screenshots/03_thermal_dna_envelope.png)
+
+### 2.4 Real-Data Empirical Benchmark & Ablation Study
+*Dynamic evaluation dashboard validating the calibrated classifier against independent ground truth (`SIH26162_REAL_BENCHMARK_V1`), showing baseline comparison tables, safe abstention coverage, and 5-tier architectural ablation progression.*
+
+![Evaluation Benchmark & Ablation Matrix](docs/screenshots/04_evaluation_benchmark.png)
+
+---
+
+## 3. Core Scientific Innovations
 
 ### 1. Facility "Thermal DNA" & Historical Operating Envelopes
 For observed industrial facilities, the engine compiles a non-parametric statistical baseline:
@@ -62,11 +86,11 @@ ranking follow-up sensing assets (e.g. Sentinel-2 20m SWIR overpasses vs. surfac
 
 ---
 
-## 3. Real-Data Empirical Validation Results
+## 4. Real-Data Empirical Validation Results
 
 All metrics below are derived dynamically from predictions evaluated against independent ground truth in `SIH26162_REAL_BENCHMARK_V1`:
 
-### 3.1 Naive Baseline vs Proposed System
+### 4.1 Naive Baseline vs Proposed System
 
 | Metric | Simple FIRMS Baseline | Proposed Platform (Thermal DNA) | Measured Gain |
 |---|---|---|---|
@@ -76,7 +100,7 @@ All metrics below are derived dynamically from predictions evaluated against ind
 | **Recall** | 0.5714 | **0.9286** | **+0.357** |
 | **Brier Score (Calibration)** | 0.285 | **0.134** | **-53.0% Error Reduction** |
 
-### 3.2 Architectural Ablation Progression
+### 4.2 Architectural Ablation Progression
 
 | Model Tier | Precision | Recall | Macro F1 | Key Scientific Role |
 |---|---|---|---|---|
@@ -86,13 +110,13 @@ All metrics below are derived dynamically from predictions evaluated against ind
 | **Model D (Thermal Operating Envelope)** | 0.7143 | 0.7857 | 0.7143 | Facility-specific quantile envelope ($Q_{10}-Q_{90}$) |
 | **Model E (Full Proposed System)** | **0.9286** | **0.9286** | **0.9048** | Multi-dimensional 5D deviation + Safe Abstention |
 
-### 3.3 Generalization & Holdout Performance
+### 4.3 Generalization & Holdout Performance
 - **Facility Holdout (Unseen Infrastructure)**: When tested on completely unseen facilities lacking historical observations, performance drops from **0.9048 to 0.5000 F1** (Generalization Gap: **0.4048**). This empirical boundary proves that historical baseline compilation is essential.
 - **Temporal Holdout**: Verified across historical pre-2026 baselines vs 2026 evaluation events with zero future-data leakage.
 
 ---
 
-## 4. Quick Start & Reproducibility
+## 5. Quick Start & Reproducibility
 
 ### 1. Complete One-Command Validation Reproduction
 To re-run the complete real-data validation pipeline, re-train models, and compile all reports:
@@ -119,11 +143,13 @@ Open [http://localhost:5173/](http://localhost:5173/) to access the interactive 
 
 ---
 
-## 5. Repository Documentation Sitemap
+## 6. Repository Documentation Sitemap
 
+- [Scientific References & Master Bibliography](file:///Ref.md): Comprehensive review of peer-reviewed papers, remote sensing algorithms, and mathematical formulations.
 - [Validation Audit](file:///docs/VALIDATION_AUDIT.md): Complete audit of hard-coded metrics and synthetic data remediation.
 - [Real Benchmark Specification](file:///docs/REAL_BENCHMARK.md): Independent ground-truth dataset composition and provenance.
 - [Evaluation Protocol](file:///docs/EVALUATION_PROTOCOL.md): Leakage prevention rules, formulas, and baseline standards.
 - [Model Card](file:///docs/MODEL_CARD.md): Architecture, features, and ethical abstention boundaries.
 - [Scientific Limitations](file:///docs/SCIENTIFIC_LIMITATIONS.md): Physical sensor limits, cloud attenuation, and SWIR vs TIR distinctions.
 - [Claims & Evidence Register](file:///docs/CLAIMS_AND_EVIDENCE.md): Exact verification status and forbidden wording register.
+
