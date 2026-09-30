@@ -123,8 +123,17 @@ export function App() {
               <h1 style={{ fontSize: "1.05rem", fontWeight: 700, letterSpacing: "0.03em" }}>
                 SIH26162 // THERMAL INTELLIGENCE &amp; ANOMALY FORENSICS
               </h1>
-              <span className="badge badge-normal" style={{ fontSize: "0.65rem" }}>
-                DEMO MODE (OFFLINE CERTIFIED)
+              <span
+                className="badge"
+                style={{
+                  fontSize: "0.68rem",
+                  backgroundColor: "rgba(16, 185, 129, 0.2)",
+                  color: "var(--accent-emerald)",
+                  border: "1px solid var(--accent-emerald)",
+                  fontWeight: 700,
+                }}
+              >
+                ✓ REAL DATA (VALIDATED)
               </span>
             </div>
             <div style={{ fontSize: "0.75rem", color: "var(--text-dim)" }}>

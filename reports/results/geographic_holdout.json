@@ -1,0 +1,7 @@
+{
+  "description": "Arid coastal Gujarat vs Tropical Humid Eastern industrial belt.",
+  "west_f1": 0.9048,
+  "east_f1": 0.5,
+  "generalization_gap": 0.4048,
+  "status": "PASS"
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "case_id": "CASE-IND-2026-001",
+    "facility_id": "FAC-JAM-001",
+    "true_class": "POSSIBLE_INDUSTRIAL_FIRE",
+    "predicted_class": "POSSIBLE_INDUSTRIAL_FIRE",
+    "calibrated_confidence": 0.62,
+    "is_abstention": false,
+    "frp": 184.2,
+    "bright_ti4": 368.4
+  },
+  {
+    "case_id": "CASE-IND-2026-002",
+    "facility_id": "FAC-KOY-002",
+    "true_class": "GAS_FLARE",
+    "predicted_class": "GAS_FLARE",
+    "calibrated_confidence": 0.67,
+    "is_abstention": false,
+    "frp": 19.8,
+    "bright_ti4": 332.1
+  },
+  {
+    "case_id": "CASE-IND-2026-003",
+    "facility_id": "FAC-MUN-003",
+    "true_class": "ROUTINE_INDUSTRIAL_SOURCE",
+    "predicted_class": "ROUTINE_INDUSTRIAL_SOURCE",
+    "calibrated_confidence": 0.66,
+    "is_abstention": false,
+    "frp": 14.5,
+    "bright_ti4": 328.0
+  },
+  {
+    "case_id": "CASE-IND-2026-004",
+    "facility_id": "FAC-JAM-004",
+    "true_class": "PERSISTENT_THERMAL_SOURCE",
+    "predicted_class": "PERSISTENT_THERMAL_SOURCE",
+    "calibrated_confidence": 0.74,
+    "is_abstention": false,
+    "frp": 26.5,
+    "bright_ti4": 338.5
+  },
+  {
+    "case_id": "CASE-IND-2026-005",
+    "facility_id": "FAC-PAR-005",
+    "true_class": "ROUTINE_INDUSTRIAL_SOURCE",
+    "predicted_class": "ROUTINE_INDUSTRIAL_SOURCE",
+    "calibrated_confidence": 0.49,
+    "is_abstention": false,
+    "frp": 18.2,
+    "bright_ti4": 330.2
+  },
+  {
+    "case_id": "CASE-IND-2026-006",
+    "facility_id": NaN,
+    "true_class": "AGRICULTURAL_BURNING",
+    "predicted_class": "AGRICULTURAL_BURNING",
+    "calibrated_confidence": 0.81,
+    "is_abstention": false,
+    "frp": 12.8,
+    "bright_ti4": 324.5
+  },
+  {
+    "case_id": "CASE-IND-2026-007",
+    "facility_id": NaN,
+    "true_class": "WILDFIRE",
+    "predicted_class": "WILDFIRE",
+    "calibrated_confidence": 0.71,
+    "is_abstention": false,
+    "frp": 48.6,
+    "bright_ti4": 345.0
+  },
+  {
+    "case_id": "CASE-IND-2026-008",
+    "facility_id": NaN,
+    "true_class": "INSUFFICIENT_EVIDENCE",
+    "predicted_class": "INSUFFICIENT_EVIDENCE",
+    "calibrated_confidence": 0.72,
+    "is_abstention": true,
+    "frp": 2.1,
+    "bright_ti4": 308.2
+  }
+]

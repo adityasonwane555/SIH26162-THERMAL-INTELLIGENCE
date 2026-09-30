@@ -1,10 +1,16 @@
-# Baseline Comparison Report: Naive FIRMS vs. Proposed System
+# SIH26162 — Naive Baseline Performance Report
 
-## 1. Executive Summary
-Operational wildfire platforms (e.g. NASA FIRMS, Van Agni) treat all thermal anomalies as undifferentiated fires. This baseline evaluation quantifies the performance delta between standard FIRMS buffering and our facility-aware forensic platform.
+**Model**: Simple FIRMS Proximity Baseline  
+**Evaluation Target**: `SIH26162_REAL_BENCHMARK_V1`
 
-## 2. Key Metrics Delta
-- **Precision**: 52.4% -> **95.8%** (+43.4%)
-- **False Alarm Rate**: 4.82 / fac-mo -> **0.34 / fac-mo** (**-92.9% reduction**)
-- **F1 Score**: 0.658 -> **0.952**
-- **Uncertainty Calibration (Brier Score)**: 0.312 -> **0.068** (lower is better)
+---
+
+## Performance Summary
+
+| Metric | Measured Value |
+|---|---|
+| **Macro F1-Score** | 0.4762 |
+| **Precision** | 0.4286 |
+| **Recall** | 0.5714 |
+| **Balanced Accuracy** | 0.5714 |
+| **Sample Count** | 8 |

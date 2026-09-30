@@ -1,0 +1,10 @@
+{
+  "dataset_name": "INDUSTRIAL_FACILITY_REGISTRY",
+  "provider": "OpenStreetMap Contributors (ODbL) + WRI Global Power Plant Database (CC-BY 4.0)",
+  "download_timestamp": "2026-09-30T16:51:44.675054+00:00",
+  "facilities_count": 5,
+  "spatial_coverage": "India Industrial Corridor (Gujarat, Jharkhand, Odisha)",
+  "sha256": "4da1cc58ac4109162576f527f0bd65285b38e2da58e84f27eec55e84e8cf236f",
+  "canonical_parquet": "facilities_processed.parquet",
+  "limitations": "Polygon boundaries are derived from crowd-sourced OSM landuse/industrial ways and satellite digitizing. Boundary buffer uncertainty is modeled mathematically in the matcher."
+}

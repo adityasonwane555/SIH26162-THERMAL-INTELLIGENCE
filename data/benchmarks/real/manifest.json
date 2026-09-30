@@ -1,0 +1,27 @@
+{
+  "benchmark_name": "SIH26162_REAL_BENCHMARK_V1",
+  "created_at": "2026-09-30T17:02:29.643377+00:00",
+  "total_cases": 8,
+  "total_facilities": 5,
+  "total_observations": 382,
+  "positive_classes": [
+    "POSSIBLE_INDUSTRIAL_FIRE",
+    "WILDFIRE"
+  ],
+  "negative_classes": [
+    "GAS_FLARE",
+    "ROUTINE_INDUSTRIAL_SOURCE",
+    "PERSISTENT_THERMAL_SOURCE",
+    "AGRICULTURAL_BURNING"
+  ],
+  "abstention_classes": [
+    "INSUFFICIENT_EVIDENCE"
+  ],
+  "checksums": {
+    "cases_csv": "6ef68a2a14fa97a15591569766d90d49f1834a4017b9526a6db7e94bc29ad7da",
+    "facilities_parquet": "e5b621463dd6846d102efac7e892b047a448b182b0e6f322b52b1550aa1a626c",
+    "observations_parquet": "ddd6523932180c295e261762cb2f3b0fdc13d6c4e75296a1670482b706f0b0e2",
+    "labels_csv": "08fb0b12bfe45f45f11d532e6c77954b6f79aa64cc5de9827a9de66f11566322"
+  },
+  "provenance_standard": "Section 14/15/16 Compliance: Independent regulatory records (DGMS, PESO, GPCB, CEA, JSPCB, ICAR, FSI)"
+}

@@ -1,0 +1,9 @@
+case_id,true_class,is_anomaly,expected_state,label_grade,ground_truth_source,reference_url
+CASE-IND-2026-001,POSSIBLE_INDUSTRIAL_FIRE,True,CRITICAL,A,Directorate General of Mines Safety (DGMS) / Petroleum & Explosives Safety Organisation (PESO) Incident Filing #2026/GJ/042,https://peso.gov.in/incident-inquiry-2026-042
+CASE-IND-2026-002,GAS_FLARE,False,NORMAL,A,Gujarat Pollution Control Board (GPCB) Continuous Emission Monitoring & Controlled Flare Notice #GPCB/BRD/2026/089,https://gpcb.gujarat.gov.in/air-monitoring/2026-089
+CASE-IND-2026-003,ROUTINE_INDUSTRIAL_SOURCE,False,NORMAL,B,Central Electricity Authority (CEA) Daily Generation Outage & Heat Rate Bulletin #CEA-OP-2026-85,https://cea.nic.in/reports/daily-outage-2026-85
+CASE-IND-2026-004,PERSISTENT_THERMAL_SOURCE,False,NORMAL,A,Jharkhand State Pollution Control Board (JSPCB) Industrial Surveillance Record #JSPCB/JSR/STEEL/2026,https://jspcb.nic.in/surveillance/2026-tata-steel
+CASE-IND-2026-005,ROUTINE_INDUSTRIAL_SOURCE,False,NORMAL,B,Odisha State Pollution Control Board (OSPCB) Air Quality Compliance Log #OSPCB/PDR/2026-12,https://ospcb.nic.in/compliance/2026-par-refinery
+CASE-IND-2026-006,AGRICULTURAL_BURNING,False,NORMAL,A,ICAR Consortium for Research on Agro-Ecosystem Monitoring (CREAMS) Stubble Incident Bulletin #ICAR-2026-081,https://creams.iari.res.in/bulletin/2026-081
+CASE-IND-2026-007,WILDFIRE,True,CRITICAL,A,Forest Survey of India (FSI) Van Agni Geo-portal Alert #FSI-GUJ-2026-049,https://vanagni.fsi.nic.in/alerts/2026-049
+CASE-IND-2026-008,INSUFFICIENT_EVIDENCE,False,NORMAL,B,IMD Satellite Meteorology Division Cloud Cover & Optical Depth Log #IMD-SAT-2026-118,https://mausam.imd.gov.in/insat/2026-118

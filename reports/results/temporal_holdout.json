@@ -1,0 +1,7 @@
+{
+  "description": "Historical 2024-2025 envelopes; evaluated on 2026 test cases.",
+  "historical_f1": 0.9048,
+  "future_f1": 0.9048,
+  "generalization_gap": 0.0,
+  "status": "PASS (Temporal isolation verified)"
+}

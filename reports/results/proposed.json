@@ -1,0 +1,128 @@
+{
+  "overall_accuracy": 0.875,
+  "precision": 0.9286,
+  "recall": 0.9286,
+  "f1_score": 0.9048,
+  "macro_f1": 0.9048,
+  "weighted_f1": 0.875,
+  "balanced_accuracy": 0.9286,
+  "per_class": {
+    "AGRICULTURAL_BURNING": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "GAS_FLARE": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 1
+    },
+    "INSUFFICIENT_EVIDENCE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "PERSISTENT_THERMAL_SOURCE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "POSSIBLE_INDUSTRIAL_FIRE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "ROUTINE_INDUSTRIAL_SOURCE": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 2
+    },
+    "WILDFIRE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    }
+  },
+  "confusion_matrix": {
+    "AGRICULTURAL_BURNING": {
+      "AGRICULTURAL_BURNING": 1,
+      "GAS_FLARE": 0,
+      "INSUFFICIENT_EVIDENCE": 0,
+      "PERSISTENT_THERMAL_SOURCE": 0,
+      "POSSIBLE_INDUSTRIAL_FIRE": 0,
+      "ROUTINE_INDUSTRIAL_SOURCE": 0,
+      "WILDFIRE": 0
+    },
+    "GAS_FLARE": {
+      "AGRICULTURAL_BURNING": 0,
+      "GAS_FLARE": 1,
+      "INSUFFICIENT_EVIDENCE": 0,
+      "PERSISTENT_THERMAL_SOURCE": 0,
+      "POSSIBLE_INDUSTRIAL_FIRE": 0,
+      "ROUTINE_INDUSTRIAL_SOURCE": 0,
+      "WILDFIRE": 0
+    },
+    "INSUFFICIENT_EVIDENCE": {
+      "AGRICULTURAL_BURNING": 0,
+      "GAS_FLARE": 0,
+      "INSUFFICIENT_EVIDENCE": 1,
+      "PERSISTENT_THERMAL_SOURCE": 0,
+      "POSSIBLE_INDUSTRIAL_FIRE": 0,
+      "ROUTINE_INDUSTRIAL_SOURCE": 0,
+      "WILDFIRE": 0
+    },
+    "PERSISTENT_THERMAL_SOURCE": {
+      "AGRICULTURAL_BURNING": 0,
+      "GAS_FLARE": 0,
+      "INSUFFICIENT_EVIDENCE": 0,
+      "PERSISTENT_THERMAL_SOURCE": 1,
+      "POSSIBLE_INDUSTRIAL_FIRE": 0,
+      "ROUTINE_INDUSTRIAL_SOURCE": 0,
+      "WILDFIRE": 0
+    },
+    "POSSIBLE_INDUSTRIAL_FIRE": {
+      "AGRICULTURAL_BURNING": 0,
+      "GAS_FLARE": 0,
+      "INSUFFICIENT_EVIDENCE": 0,
+      "PERSISTENT_THERMAL_SOURCE": 0,
+      "POSSIBLE_INDUSTRIAL_FIRE": 1,
+      "ROUTINE_INDUSTRIAL_SOURCE": 0,
+      "WILDFIRE": 0
+    },
+    "ROUTINE_INDUSTRIAL_SOURCE": {
+      "AGRICULTURAL_BURNING": 0,
+      "GAS_FLARE": 1,
+      "INSUFFICIENT_EVIDENCE": 0,
+      "PERSISTENT_THERMAL_SOURCE": 0,
+      "POSSIBLE_INDUSTRIAL_FIRE": 0,
+      "ROUTINE_INDUSTRIAL_SOURCE": 1,
+      "WILDFIRE": 0
+    },
+    "WILDFIRE": {
+      "AGRICULTURAL_BURNING": 0,
+      "GAS_FLARE": 0,
+      "INSUFFICIENT_EVIDENCE": 0,
+      "PERSISTENT_THERMAL_SOURCE": 0,
+      "POSSIBLE_INDUSTRIAL_FIRE": 0,
+      "ROUTINE_INDUSTRIAL_SOURCE": 0,
+      "WILDFIRE": 1
+    }
+  },
+  "sample_count": 8,
+  "abstention": {
+    "abstention_rate": 0.125,
+    "coverage": 0.875,
+    "accuracy_on_covered": 0.8571,
+    "correct_abstentions": 1,
+    "false_attributions_avoided": 1
+  },
+  "notes": "Full explainable evidence graph with 5D spatial/intensity deviation and safe abstention.",
+  "model_name": "SIH26162 Full Proposed System (Thermal DNA)"
+}

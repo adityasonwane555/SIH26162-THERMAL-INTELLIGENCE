@@ -1,0 +1,138 @@
+{
+  "model_id": "MOD-REAL-RF-001",
+  "model_version": "v0.2-real-validation",
+  "algorithm": "RandomForestClassifier",
+  "training_timestamp": "2026-09-30T17:02:29.787499+00:00",
+  "git_commit": "5a9b3bb74dd5966e15186d53ebb1709a1e69c40b",
+  "training_dataset": "SIH26162_REAL_BENCHMARK_V1",
+  "sample_count": 8,
+  "split_strategy": "facility_holdout",
+  "feature_columns": [
+    "frp",
+    "bright_ti4",
+    "bright_ti4_minus_ti5",
+    "has_facility",
+    "facility_criticality"
+  ],
+  "random_seed": 101,
+  "in_sample_metrics": {
+    "overall_accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "per_class": {
+      "AGRICULTURAL_BURNING": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "GAS_FLARE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "INSUFFICIENT_EVIDENCE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "PERSISTENT_THERMAL_SOURCE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "POSSIBLE_INDUSTRIAL_FIRE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "ROUTINE_INDUSTRIAL_SOURCE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      },
+      "WILDFIRE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      }
+    },
+    "confusion_matrix": {
+      "AGRICULTURAL_BURNING": {
+        "AGRICULTURAL_BURNING": 1,
+        "GAS_FLARE": 0,
+        "INSUFFICIENT_EVIDENCE": 0,
+        "PERSISTENT_THERMAL_SOURCE": 0,
+        "POSSIBLE_INDUSTRIAL_FIRE": 0,
+        "ROUTINE_INDUSTRIAL_SOURCE": 0,
+        "WILDFIRE": 0
+      },
+      "GAS_FLARE": {
+        "AGRICULTURAL_BURNING": 0,
+        "GAS_FLARE": 1,
+        "INSUFFICIENT_EVIDENCE": 0,
+        "PERSISTENT_THERMAL_SOURCE": 0,
+        "POSSIBLE_INDUSTRIAL_FIRE": 0,
+        "ROUTINE_INDUSTRIAL_SOURCE": 0,
+        "WILDFIRE": 0
+      },
+      "INSUFFICIENT_EVIDENCE": {
+        "AGRICULTURAL_BURNING": 0,
+        "GAS_FLARE": 0,
+        "INSUFFICIENT_EVIDENCE": 1,
+        "PERSISTENT_THERMAL_SOURCE": 0,
+        "POSSIBLE_INDUSTRIAL_FIRE": 0,
+        "ROUTINE_INDUSTRIAL_SOURCE": 0,
+        "WILDFIRE": 0
+      },
+      "PERSISTENT_THERMAL_SOURCE": {
+        "AGRICULTURAL_BURNING": 0,
+        "GAS_FLARE": 0,
+        "INSUFFICIENT_EVIDENCE": 0,
+        "PERSISTENT_THERMAL_SOURCE": 1,
+        "POSSIBLE_INDUSTRIAL_FIRE": 0,
+        "ROUTINE_INDUSTRIAL_SOURCE": 0,
+        "WILDFIRE": 0
+      },
+      "POSSIBLE_INDUSTRIAL_FIRE": {
+        "AGRICULTURAL_BURNING": 0,
+        "GAS_FLARE": 0,
+        "INSUFFICIENT_EVIDENCE": 0,
+        "PERSISTENT_THERMAL_SOURCE": 0,
+        "POSSIBLE_INDUSTRIAL_FIRE": 1,
+        "ROUTINE_INDUSTRIAL_SOURCE": 0,
+        "WILDFIRE": 0
+      },
+      "ROUTINE_INDUSTRIAL_SOURCE": {
+        "AGRICULTURAL_BURNING": 0,
+        "GAS_FLARE": 0,
+        "INSUFFICIENT_EVIDENCE": 0,
+        "PERSISTENT_THERMAL_SOURCE": 0,
+        "POSSIBLE_INDUSTRIAL_FIRE": 0,
+        "ROUTINE_INDUSTRIAL_SOURCE": 2,
+        "WILDFIRE": 0
+      },
+      "WILDFIRE": {
+        "AGRICULTURAL_BURNING": 0,
+        "GAS_FLARE": 0,
+        "INSUFFICIENT_EVIDENCE": 0,
+        "PERSISTENT_THERMAL_SOURCE": 0,
+        "POSSIBLE_INDUSTRIAL_FIRE": 0,
+        "ROUTINE_INDUSTRIAL_SOURCE": 0,
+        "WILDFIRE": 1
+      }
+    },
+    "sample_count": 8
+  },
+  "model_file_sha256": "45a94be61770997861b538214c6255828207400b72b693c1116b5f89b1f8d2b8"
+}

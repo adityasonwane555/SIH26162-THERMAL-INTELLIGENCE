@@ -1,0 +1,8 @@
+{
+  "description": "Train on West Gujarat facilities; evaluate on East India industrial facilities.",
+  "in_distribution_f1": 0.9048,
+  "unseen_facility_f1": 0.5,
+  "generalization_gap": 0.4048,
+  "status": "ATTENTION",
+  "test_sample_count": 2
+}

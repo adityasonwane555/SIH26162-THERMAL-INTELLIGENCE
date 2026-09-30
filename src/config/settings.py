@@ -70,11 +70,15 @@ class Settings:
     NASA_FIRMS_MAP_KEY: str = field(default_factory=lambda: os.getenv("NASA_FIRMS_MAP_KEY", ""))
 
     # Directories
+    BASE_DIR: Path = field(default_factory=lambda: BASE_DIR)
+    DATA_DIR: Path = field(default_factory=lambda: BASE_DIR / "data")
     DATA_RAW_DIR: Path = field(default_factory=lambda: BASE_DIR / "data" / "raw")
     DATA_INTERIM_DIR: Path = field(default_factory=lambda: BASE_DIR / "data" / "interim")
     DATA_PROCESSED_DIR: Path = field(default_factory=lambda: BASE_DIR / "data" / "processed")
     DATA_BENCHMARKS_DIR: Path = field(default_factory=lambda: BASE_DIR / "data" / "benchmarks")
+    DATA_BENCHMARKS_REAL_DIR: Path = field(default_factory=lambda: BASE_DIR / "data" / "benchmarks" / "real")
     DATA_SYNTHETIC_DIR: Path = field(default_factory=lambda: BASE_DIR / "data" / "synthetic")
+    MODELS_DIR: Path = field(default_factory=lambda: BASE_DIR / "models")
     REPORTS_DIR: Path = field(default_factory=lambda: BASE_DIR / "reports")
     EXPERIMENTS_DIR: Path = field(default_factory=lambda: BASE_DIR / "experiments")
 

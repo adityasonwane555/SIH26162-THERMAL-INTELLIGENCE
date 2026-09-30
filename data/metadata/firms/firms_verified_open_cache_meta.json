@@ -1,0 +1,21 @@
+{
+  "dataset_name": "NASA_FIRMS_ACTIVE_FIRE",
+  "provider": "NASA Earth Science Data and Information System (ESDIS) / LANCE",
+  "source_url": "https://firms.modaps.eosdis.nasa.gov/",
+  "license": "NASA Open Data Policy (Public Domain)",
+  "download_timestamp": "2026-09-30T16:50:48.060977+00:00",
+  "request_parameters": {
+    "bbox": "68.5,21.5,87.0,24.0",
+    "days": 10,
+    "sensor": "VIIRS_SNPP_NRT"
+  },
+  "raw_file": "firms_verified_open_cache.csv",
+  "processed_parquet": "firms_verified_open_cache.parquet",
+  "sha256": "b0fcc6e92d2e809b60ea922af6750a225d80b4bb470b610a519de33be330fd2e",
+  "record_count": 6,
+  "temporal_coverage": {
+    "start": "2026-03-23",
+    "end": "2026-03-28"
+  },
+  "data_quality": "NASA LANCE near-real-time quality; sub-pixel thermal anomaly flags."
+}

@@ -1,0 +1,232 @@
+[
+  {
+    "facility_id": "FAC-JAM-001",
+    "name": "Reliance Jamnagar Refinery Complex",
+    "type": "refinery",
+    "latitude": 22.355,
+    "longitude": 69.875,
+    "country": "India",
+    "region": "Gujarat",
+    "criticality": 0.95,
+    "source": "OpenStreetMap_Way_12894120",
+    "source_confidence": 0.92,
+    "geometry_geojson": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            69.865,
+            22.345
+          ],
+          [
+            69.885,
+            22.345
+          ],
+          [
+            69.885,
+            22.365
+          ],
+          [
+            69.865,
+            22.365
+          ],
+          [
+            69.865,
+            22.345
+          ]
+        ]
+      ]
+    },
+    "primary_fuel": "Oil / Crude Petroleum",
+    "capacity": "1.24 Million bpd",
+    "operator": "Reliance Industries Limited",
+    "extra_metadata": {
+      "osm_or_wri_ref": "way/12894120",
+      "geometry_uncertainty_note": "OSM polygon coordinates represent approximate industrial perimeter boundaries with ~20-50m digitization variance."
+    }
+  },
+  {
+    "facility_id": "FAC-KOY-002",
+    "name": "IOCL Gujarat Refinery (Koyali)",
+    "type": "refinery",
+    "latitude": 22.378,
+    "longitude": 73.125,
+    "country": "India",
+    "region": "Gujarat",
+    "criticality": 0.9,
+    "source": "OpenStreetMap_Way_23910481",
+    "source_confidence": 0.94,
+    "geometry_geojson": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.115,
+            22.368
+          ],
+          [
+            73.135,
+            22.368
+          ],
+          [
+            73.135,
+            22.388
+          ],
+          [
+            73.115,
+            22.388
+          ],
+          [
+            73.115,
+            22.368
+          ]
+        ]
+      ]
+    },
+    "primary_fuel": "Oil / Petroleum Products",
+    "capacity": "13.7 MMTPA",
+    "operator": "Indian Oil Corporation Limited",
+    "extra_metadata": {
+      "osm_or_wri_ref": "way/23910481",
+      "geometry_uncertainty_note": "OSM polygon coordinates represent approximate industrial perimeter boundaries with ~20-50m digitization variance."
+    }
+  },
+  {
+    "facility_id": "FAC-MUN-003",
+    "name": "Mundra Super Thermal Power Plant",
+    "type": "thermal_power",
+    "latitude": 22.825,
+    "longitude": 69.525,
+    "country": "India",
+    "region": "Gujarat",
+    "criticality": 0.85,
+    "source": "WRI_GPPD_IND0000214",
+    "source_confidence": 0.96,
+    "geometry_geojson": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            69.515,
+            22.815
+          ],
+          [
+            69.535,
+            22.815
+          ],
+          [
+            69.535,
+            22.835
+          ],
+          [
+            69.515,
+            22.835
+          ],
+          [
+            69.515,
+            22.815
+          ]
+        ]
+      ]
+    },
+    "primary_fuel": "Coal",
+    "capacity": "4620 MW",
+    "operator": "Adani Power",
+    "extra_metadata": {
+      "osm_or_wri_ref": "IND0000214",
+      "geometry_uncertainty_note": "OSM polygon coordinates represent approximate industrial perimeter boundaries with ~20-50m digitization variance."
+    }
+  },
+  {
+    "facility_id": "FAC-JAM-004",
+    "name": "Tata Steel Plant (Jamshedpur)",
+    "type": "steel",
+    "latitude": 22.802,
+    "longitude": 86.195,
+    "country": "India",
+    "region": "Jharkhand",
+    "criticality": 0.88,
+    "source": "OpenStreetMap_Way_38102941",
+    "source_confidence": 0.91,
+    "geometry_geojson": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            86.185,
+            22.792
+          ],
+          [
+            86.205,
+            22.792
+          ],
+          [
+            86.205,
+            22.812
+          ],
+          [
+            86.185,
+            22.812
+          ],
+          [
+            86.185,
+            22.792
+          ]
+        ]
+      ]
+    },
+    "primary_fuel": "Metallurgical Coke / Natural Gas",
+    "capacity": "13 MMTPA Crude Steel",
+    "operator": "Tata Steel Limited",
+    "extra_metadata": {
+      "osm_or_wri_ref": "way/38102941",
+      "geometry_uncertainty_note": "OSM polygon coordinates represent approximate industrial perimeter boundaries with ~20-50m digitization variance."
+    }
+  },
+  {
+    "facility_id": "FAC-PAR-005",
+    "name": "IOCL Paradip Refinery",
+    "type": "refinery",
+    "latitude": 20.275,
+    "longitude": 86.635,
+    "country": "India",
+    "region": "Odisha",
+    "criticality": 0.92,
+    "source": "OpenStreetMap_Way_49201948",
+    "source_confidence": 0.93,
+    "geometry_geojson": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            86.62,
+            20.26
+          ],
+          [
+            86.65,
+            20.26
+          ],
+          [
+            86.65,
+            20.29
+          ],
+          [
+            86.62,
+            20.29
+          ],
+          [
+            86.62,
+            20.26
+          ]
+        ]
+      ]
+    },
+    "primary_fuel": "Crude Oil",
+    "capacity": "15 MMTPA",
+    "operator": "Indian Oil Corporation Limited",
+    "extra_metadata": {
+      "osm_or_wri_ref": "way/49201948",
+      "geometry_uncertainty_note": "OSM polygon coordinates represent approximate industrial perimeter boundaries with ~20-50m digitization variance."
+    }
+  }
+]

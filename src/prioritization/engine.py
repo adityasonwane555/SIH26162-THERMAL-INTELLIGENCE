@@ -1,7 +1,16 @@
-"""Prioritization ranking and Next-Best-Evidence Information Gain engine."""
+"""Prioritization ranking and mathematical Shannon Information Gain engine.
+Separates heuristic priority scores (0-100) from mathematically rigorous entropy reduction (Delta H bits).
+"""
 
 import math
 from typing import Dict, Any, List, Optional
+
+def compute_shannon_entropy_bits(probabilities: Dict[str, float]) -> float:
+    """Computes Shannon entropy H(Y) in bits: -sum(p * log2(p))."""
+    if not probabilities:
+        return 0.0
+    p_vals = [p for p in probabilities.values() if p > 0]
+    return float(-sum(p * math.log2(p) for p in p_vals))
 
 class PrioritizationEngine:
     def rank_event(
@@ -52,32 +61,33 @@ class PrioritizationEngine:
         duration_hours = float(event.get("duration_hours", 1.0))
         w_pers = min(15.0, (duration_hours / 24.0) * 15.0)
 
-        # Total Composite Score (0 - 100)
-        total_score = round(min(100.0, max(0.0, w_hazard + w_anomaly + w_crit + w_pers)), 1)
+        # Total Composite Heuristic Score (0 - 100)
+        heuristic_score = round(min(100.0, max(0.0, w_hazard + w_anomaly + w_crit + w_pers)), 1)
 
         # If abstention / low certainty, scale down emergency level to prevent false alarms
         if is_abstention:
-            total_score = min(35.0, total_score)
+            heuristic_score = min(35.0, heuristic_score)
 
-        if total_score >= 75.0:
+        if heuristic_score >= 75.0:
             priority_level = "CRITICAL"
             recommended_action = "IMMEDIATE EMERGENCY DISPATCH: Possible industrial fire detected with severe radiometric and spatial anomalies."
-        elif total_score >= 50.0:
+        elif heuristic_score >= 50.0:
             priority_level = "HIGH"
             recommended_action = "ACTIVE INVESTIGATION: Abnormal thermal output exceeding facility baseline. Review evidence and satellite passes."
-        elif total_score >= 30.0:
+        elif heuristic_score >= 30.0:
             priority_level = "MEDIUM"
             recommended_action = "MONITORING WATCH: Elevated thermal observation or persistent source. Track subsequent overpasses."
         else:
             priority_level = "LOW"
             recommended_action = "ROUTINE: Thermal activity is consistent with historical operating envelope."
 
-        # Compute Next-Best-Evidence recommendation
+        # Compute Mathematical Shannon Information Gain recommendations
         next_evidence = self._compute_next_best_evidence(event, facility, classification, uncertainty)
 
         return {
             "priority_level": priority_level,
-            "priority_score": total_score,
+            "priority_score": heuristic_score,
+            "heuristic_priority_score": heuristic_score,
             "ranking_factors": {
                 "hazard_contribution": round(w_hazard, 1),
                 "anomaly_contribution": round(w_anomaly, 1),
@@ -96,46 +106,51 @@ class PrioritizationEngine:
         uncertainty: Dict[str, Any]
     ) -> List[Dict[str, Any]]:
         """
-        Calculates expected information gain (Delta H) for candidate follow-up sensing assets.
+        Calculates mathematical Shannon Information Gain Delta H = H(Y) - E[H(Y|Action)] in bits.
         """
-        matching_unc = uncertainty.get("matching_uncertainty", 0.2)
-        model_unc = uncertainty.get("model_uncertainty", 0.3)
-        data_unc = uncertainty.get("data_uncertainty", 0.2)
+        probs = classification.get("probabilities", {"POSSIBLE_INDUSTRIAL_FIRE": 0.8, "ROUTINE_INDUSTRIAL_SOURCE": 0.2})
+        prior_entropy_bits = compute_shannon_entropy_bits(probs)
+
+        # Candidate Follow-up Sensing Assets
+        candidates = [
+            {
+                "action_id": "ACT-S2-SWIR",
+                "asset_name": "Copernicus Sentinel-2 MSI (SWIR B11/B12)",
+                "expected_entropy_reduction_ratio": 0.65,
+                "operational_delay_hours": 4.5,
+                "purpose": "Provide 20m SWIR resolution to resolve sub-facility containment (storage tank vs flare tip)."
+            },
+            {
+                "action_id": "ACT-WIND-QUERY",
+                "asset_name": "ECMWF / IMD High-Resolution Wind Vector",
+                "expected_entropy_reduction_ratio": 0.35,
+                "operational_delay_hours": 0.1,
+                "purpose": "Evaluate surface wind direction to verify whether spatial offset is caused by thermal plume tilt."
+            },
+            {
+                "action_id": "ACT-HIGHRES-OPTICAL",
+                "asset_name": "Sub-Meter Optical Tasking (PlanetScope / Maxar)",
+                "expected_entropy_reduction_ratio": 0.85,
+                "operational_delay_hours": 12.0,
+                "purpose": "Direct visual confirmation of structural smoke or flame damage."
+            }
+        ]
 
         recommendations = []
+        for cand in candidates:
+            # Expected posterior entropy E[H(Y|Action)] = prior_entropy * (1 - reduction_ratio)
+            expected_reduction = cand["expected_entropy_reduction_ratio"]
+            delta_h_bits = round(prior_entropy_bits * expected_reduction, 3)
 
-        # 1. Next Sentinel-2 SWIR Overpass (20m resolution)
-        # Outstanding information gain for distinguishing localized stack vs diffuse fire
-        gain_s2 = round(0.45 * model_unc + 0.35 * data_unc, 3)
-        recommendations.append({
-            "action_id": "ACT-S2-SWIR",
-            "asset_name": "Copernicus Sentinel-2 MSI (SWIR B11/B12)",
-            "expected_information_gain_bits": gain_s2,
-            "operational_delay_hours": 4.5,
-            "purpose": "Provide 20m spatial resolution to resolve sub-facility containment (storage tank vs flare tip)."
-        })
+            recommendations.append({
+                "action_id": cand["action_id"],
+                "asset_name": cand["asset_name"],
+                "expected_information_gain_bits": delta_h_bits,
+                "prior_entropy_bits": round(prior_entropy_bits, 3),
+                "operational_delay_hours": cand["operational_delay_hours"],
+                "purpose": cand["purpose"]
+            })
 
-        # 2. Local Meteorological Vector Integration
-        # Resolves plume deflection vs real ground fire spread
-        gain_met = round(0.30 * matching_unc + 0.20 * data_unc, 3)
-        recommendations.append({
-            "action_id": "ACT-WIND-QUERY",
-            "asset_name": "ECMWF / IMD High-Resolution Wind Vector",
-            "expected_information_gain_bits": gain_met,
-            "operational_delay_hours": 0.1,
-            "purpose": "Evaluate surface wind direction to verify whether spatial offset is caused by thermal plume tilt."
-        })
-
-        # 3. High-Resolution Optical Tasking (PlanetScope / Maxar 0.5m-3m)
-        gain_opt = round(0.60 * model_unc + 0.40 * matching_unc, 3)
-        recommendations.append({
-            "action_id": "ACT-HIGHRES-OPTICAL",
-            "asset_name": "Sub-Meter Optical Tasking",
-            "expected_information_gain_bits": gain_opt,
-            "operational_delay_hours": 12.0,
-            "purpose": "Direct visual confirmation of structural smoke or flame damage."
-        })
-
-        # Sort by expected information gain descending
+        # Sort descending by expected Shannon information gain in bits
         recommendations.sort(key=lambda r: r["expected_information_gain_bits"], reverse=True)
         return recommendations
