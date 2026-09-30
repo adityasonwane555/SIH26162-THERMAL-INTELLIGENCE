@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import * as maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
+import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import type { Facility, ThermalEvent } from "../types";
+
+// Configure MapLibre Web Worker for Vite
+maplibregl.setWorkerUrl(workerUrl);
 
 interface MapComponentProps {
   facilities: Facility[];
@@ -54,7 +59,15 @@ export const MapComponent: React.FC<MapComponentProps> = ({
 
     map.addControl(new maplibregl.NavigationControl(), "top-right");
 
+    const handleResize = () => {
+      map.resize();
+    };
+    window.addEventListener("resize", handleResize);
+
     map.on("load", () => {
+      map.resize();
+      setTimeout(() => map.resize(), 150);
+
       // Add facility perimeter polygons
       const features = facilities
         .filter((f) => f.geometry_geojson)
@@ -83,7 +96,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
           source: "facilities-polygons",
           paint: {
             "fill-color": "#3b82f6",
-            "fill-opacity": 0.15,
+            "fill-opacity": 0.20,
           },
         });
 
@@ -103,6 +116,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     mapInstance.current = map;
 
     return () => {
+      window.removeEventListener("resize", handleResize);
       map.remove();
       mapInstance.current = null;
     };
@@ -174,8 +188,27 @@ export const MapComponent: React.FC<MapComponentProps> = ({
   }, [selectedEventId, events]);
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%", minHeight: "450px" }}>
-      <div ref={mapContainer} style={{ width: "100%", height: "100%" }} />
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        minHeight: "500px",
+        backgroundColor: "#0a0e17",
+      }}
+    >
+      <div
+        ref={mapContainer}
+        style={{
+          position: "absolute",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          width: "100%",
+          height: "100%",
+        }}
+      />
       <div
         style={{
           position: "absolute",

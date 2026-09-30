@@ -217,7 +217,7 @@ export function App() {
         <main style={{ flex: 1, overflowY: "auto", padding: "16px", position: "relative" }}>
           {activeTab === "map" && (
             <div style={{ display: "flex", flexDirection: "column", height: "100%", gap: "14px" }}>
-              <div style={{ flex: 1, minHeight: "450px", borderRadius: "8px", overflow: "hidden", border: "1px solid var(--border-color)" }}>
+              <div style={{ flex: 1, minHeight: "520px", borderRadius: "8px", overflow: "hidden", border: "1px solid var(--border-color)", position: "relative" }}>
                 <MapComponent
                   facilities={facilities}
                   events={events}
